@@ -54,7 +54,7 @@ sha256sum integridad.txt
 ```
 
 Modifica un solo caracter y vuelve a calcular los resúmenes. ¿Cómo han cambiado?
-
+    Han cambiado por completo.
 ## Integridad y esteganografia
 
 Compara los hashes de los mensajes usados en la esteganografía: 
@@ -65,7 +65,7 @@ sha256sum msg_linus_old
 ```
 
 ¿Coinciden? 
-
+Si.
 Compara los hashes de los ficheros contenedor:
 
 ```bash
@@ -74,8 +74,13 @@ sha256sum linus_steg.jpg
 ```
 
 ¿Coinciden? 
+NO.
+Hay un mensaje importante de Buenaventura Durruti para vosotros en una de las imagenes del directorio `durruti`. El mensaje ha sido introducido mediante el programa steghide, con contraseña "durruti". La imagen que contiene el mensaje se corresponde con el Hash (SHA256) `7d573924d70a604cb56122aed9bded3f40d3083d8adc353a97c0b816c0e573bb`. ¿Qué archivo es? 
+Durruti Imagen27.jpg 
+¿Qué dice la frase? 
+"Al Fascismo no se le discute, se le destruye." Buenaventura Durruti
+¿Como automatizarías la búsqueda si tuvieses muchos archivos en carpetas y subcarpetas?
 
-Hay un mensaje importante de Buenaventura Durruti para vosotros en una de las imagenes del directorio `durruti`. El mensaje ha sido introducido mediante el programa steghide, con contraseña "durruti". La imagen que contiene el mensaje se corresponde con el Hash (SHA256) `7d573924d70a604cb56122aed9bded3f40d3083d8adc353a97c0b816c0e573bb`. ¿Qué archivo es? ¿Qué dice la frase? ¿Como automatizarías la búsqueda si tuvieses muchos archivos en carpetas y subcarpetas?
 
 ## Contraseñas y sal
 
@@ -96,7 +101,7 @@ openssl passwd -6 -salt SAL002 ContrasenaSegura
 ```
 
 ¿Cambian los Hashes?
-
+SI. 
 En la carpeta `password_hash_demo` tienes una pequeña aplicación web con tres versiones de la misma funcionalidad:
 
 - `plain`: almacena la contraseña en texto plano.
@@ -118,9 +123,12 @@ Después abre:
 
 Registra el mismo usuario y la misma contraseña en las tres versiones y compara la base de datos o la información mostrada por cada servicio. Fíjate en que:
 
-- En texto plano se ve la contraseña original;
+- En texto plano se ve la contraseña original; 
+bittor 12345
 - Con hash, la misma contraseña produce el mismo valor hash para todos los usuarios;
+bittor 5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
 - Con sal, cada usuario tiene una sal distinta, por lo que iguales contraseñas no generan el mismo valor almacenado.
+bittor 	306a474daf8dbb2d8e978dfc2f6ba7c7 68b975b399cef53c5f7179446ceecbebb8efa703b2ff5c21541d0c80e3b3fc8e
 
 Despliega el proyecto en tu servidor Google Cloud y comprueba que funciona correctamente, y que puedes cambiar la sal a un número definido por tí.
 
