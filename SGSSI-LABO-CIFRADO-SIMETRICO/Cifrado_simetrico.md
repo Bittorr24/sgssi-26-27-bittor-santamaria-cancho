@@ -88,6 +88,15 @@ Compara el tamaño de los criptogramas y verifica su integridad mediante sus sum
 sha256sum mensaje.txt mensaje.aes mensaje.3des mensaje.des
 sha256sum mensaje.aes.descifrado mensaje.3des.descifrado mensaje.des.descifrado
 ```
+sha256sum mensaje.aes.descifrado mensaje.3des.descifrado mensaje.des.descifrado
+369e295456ced472d7b5f04d60b147476d11249ca13f7d44f8d90e3cca8ff664  mensaje.txt
+a2579014926168e7a6b68dc658064af391bf4da414181532fc0d56496587684f  mensaje.aes
+a92647ab44a02230197908350e3f888449a8a2442cc5c98ecb0b1cb23d1bcb9b  mensaje.3des
+0cb5ef77cd148aff05070e3b6834068747fe33d0a47dcd160c5dd5759c998103  mensaje.des
+369e295456ced472d7b5f04d60b147476d11249ca13f7d44f8d90e3cca8ff664  mensaje.aes.descifrado
+369e295456ced472d7b5f04d60b147476d11249ca13f7d44f8d90e3cca8ff664  mensaje.3des.descifrado
+369e295456ced472d7b5f04d60b147476d11249ca13f7d44f8d90e3cca8ff664  mensaje.des.descifrado
+
 
 ¿Que quiere decir CBC en `-des-ede3-cbc`?¿Hay otras opciones?
 
